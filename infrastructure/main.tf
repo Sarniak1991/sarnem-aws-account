@@ -3,7 +3,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 3.27"
+      version = "~> 3.44"
     }
   }
 
@@ -21,4 +21,12 @@ provider "aws" {
   profile = "private"
 }
 
+module "eventbridge" {
+  source  = "terraform-aws-modules/eventbridge/aws"
+  version = "1.14.2"
+}
 
+//module "event-bridge" {
+//  source = "./modules/event-bridge"
+//  name = "eventbridge"
+//}
